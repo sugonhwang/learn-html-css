@@ -3,6 +3,9 @@ img 요소의 src / alt는 필수 속성임
 img 요소 중 alt 속성 : 이미지를 볼수 없는 환경 대체 텍스트
 .webp 확장자 : 차세대 이미지 포맷(다른 포맷도 찾아보기)
 reflow repaint 관련 내용 찾아보기
+<img loading=lazy /> : 리소스를 필요할때만 로드하는 전략으로 일반적으로 스크롤 및 내비게이션과 같은 일부 사용자 상호 작용에서 발생함
+                      -> 즉, 랜더링에 우선 순위를 결정하여 지연을 해도 되는 리소스에만 레이지 로딩 사용
+
 -->
 
 <!doctype html>
@@ -14,6 +17,7 @@ reflow repaint 관련 내용 찾아보기
   </head>
   <body>
     <h1>이미지 삽입</h1>
+    <h2>이미지 요소</h2>
     <!--비트맵 이미지-->
     <img
       src="/src/assets/food/cake.jpeg"
@@ -25,17 +29,20 @@ reflow repaint 관련 내용 찾아보기
       alt="밴엔제리스 파이트 아이스크림"
     />
     <!--백터 이미지
-    크기 관련 속성 widht : 가로 / height: 세로(높이)
+    크기 관련 속성 width : 가로 / height: 세로(높이)
     svg는 소스코드를 복사하여 사용할 수 있음
-      aria-label : <img>태그의 alt를 대체할 수 있음
+      - aria-label : <img>태그의 alt를 대체할 수 있으나 용도에 맞지 않으므로 가급적 사용 권장 X
+      - svg 요소에 alt를 대체하려면 요소 안에 <title>요소로 대체
     -->
     <br />
+    <!-- <img>태그로 벡터 이미지 삽입하는 방법-->
     <img
       src="/src/assets/svg/chitchat.svg"
       alt="찜하기"
       width="50"
       height="50"
     />
+    <!--svg 태그로 HTML에 직접 삽입 하는 방법-->
     <svg
       aria-label="1대1 채팅"
       class="h-12 w-12"
@@ -69,5 +76,21 @@ reflow repaint 관련 내용 찾아보기
         ></path>
       </g>
     </svg>
+    <br />
+    <h2>피규어 요소</h2>
+    <!-- figcaption을 사용하기 때문에 alt를 제외해도 될까? 제외 해도 되지만 SEO는 떨어짐-->
+    <figure>
+      <img src="/src/assets/drama/good-partner-narrow.webp" alt="" />
+      <figcaption>드라마 굿 파트너 속 장나라</figcaption>
+    </figure>
+    <br />
+    <figure>
+      <img
+        src="/src/assets/drama/mon-friend-son-narrow.webp"
+        alt="엄마 친구 아들 새로운 에피소드 지금 시청하기"
+        loading="lazy"
+      />
+      <figcaption>티빙에서 시청 - 엄마 친구 아들</figcaption>
+    </figure>
   </body>
 </html>
