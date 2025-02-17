@@ -1,0 +1,72 @@
+<!--
+  <caption>은 테이블의 너비만큼 늘어나고 기본적으로 가운데 정렬이 됨
+  테이블의 영역(헤드/바디/바닥)을 구분 할 때 thead, tbody, tfoot을 사용함
+    thead와 tfoot은 테이블 내에서 한번씩 사용 가능, tbody는 여러번 사용 가능함
+  병합
+    열 병합은 colspan="값"
+    행 병합은 rowspan="값"
+-->
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>테이블</title>
+    <style>
+      table,
+      th,
+      td {
+        /* 셀렉터 */
+        border: 1px solid currentColor;
+        border-spacing: 0; /* border와 border 사이의 간격을 제거 */
+        border-collapse: collapse; /* border를 병함 */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>테이블 관련 요소</h1>
+    <!-- 실습 -->
+    <table>
+      <caption>
+        <colgroup>
+          <col />
+          <!-- span 값만큼 열을 합침 -->
+          <col span="2" />
+          <col />
+        </colgroup>
+        멋쟁이 사자처럼 프론트엔드 스쿨 13기 스탭
+      </caption>
+      <thead>
+        <tr>
+          <!-- 1행 4열-->
+          <th scope="col">번호</th>
+          <th scope="col">강사</th>
+          <th scope="col">멘토</th>
+          <th scope="col">운영진</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>슬비쌤</td>
+          <td>유진혁</td>
+          <td>정재인</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>용쌤</td>
+          <td>권석기</td>
+          <td>금윤호</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th scope="row">인원수</th>
+          <td>2명</td>
+          <td>2명</td>
+          <td>2명</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>
