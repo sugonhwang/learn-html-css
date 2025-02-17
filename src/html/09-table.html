@@ -21,16 +21,22 @@
         border-spacing: 0; /* border와 border 사이의 간격을 제거 */
         border-collapse: collapse; /* border를 병함 */
       }
+
+      caption {
+        caption-side: bottom;
+      }
     </style>
   </head>
   <body>
     <h1>테이블 관련 요소</h1>
     <!-- 실습 -->
+    <h2>테이블 예제</h2>
+
     <table>
       <caption>
         <colgroup>
           <col />
-          <!-- span 값만큼 열을 합침 -->
+          <!-- span 값만큼 열(col)을 합침 -->
           <col span="2" />
           <col />
         </colgroup>
@@ -67,6 +73,38 @@
           <td>2명</td>
         </tr>
       </tfoot>
+    </table>
+    <hr />
+    <!-- 테이블 요소 실습 2번째-->
+    <table>
+      <caption>
+        <p>HTML&CSS 입문 과정</p>
+      </caption>
+      <tr>
+        <th id="learntime" scope="col">학습시간</th>
+        <td headr="learntime" scope="row">09:00 ~ 19:00</td>
+        <th id="level" scope="col">난이도</th>
+        <td id="level" scope="row">초급</td>
+      </tr>
+      <tr>
+        <th id="price">교육비지원</th>
+        <td headers="price">고용보험 비환급</td>
+        <th id="test">평가 항목</th>
+        <td headers="test">출석률 100%</td>
+      </tr>
+      <tr>
+        <th id="completion">수료 기준</th>
+        <td headers="completion">총점 80점 이상 수료</td>
+        <th id="limit">정원</th>
+        <td headers="limit">70명</td>
+      </tr>
+      <tr>
+        <th id="book">교재 정보</th>
+        <td headers="book" colspan="3">
+          입문자를 위한 Git과 <br />HTML&CSS웹사이트 개바로가 디자인
+          기초(35,000원)
+        </td>
+      </tr>
     </table>
   </body>
 </html>
