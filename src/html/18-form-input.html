@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form(input 요소)</title>
+  </head>
+  <body>
+    <h1>form 관련 요소</h1>
+    <h2>input 요소</h2>
+    <!-- 한 줄 입력 서식-->
+    <form action="/">
+      <fieldset>
+        <legend>폼서식</legend>
+        <div>
+          <label for="userName">이름</label>
+          <input
+            type="text"
+            id="userName"
+            name="userName"
+            required
+            placeholder="예)황수곤"
+          />
+        </div>
+
+        <!-- 비밀번호 입력 서식-->
+        <div>
+          <label for="userPwd">비밀번호</label>
+          <input
+            type="password"
+            id="userPwd"
+            required
+            name="userPwd"
+            placeholder="8자리 이상"
+          />
+        </div>
+
+        <!-- 검색 입력 서식-->
+        <div>
+          <label for="likelionSearch">검색</label>
+          <input type="search" id="likelionSearch" name="likelionSearch" />
+        </div>
+
+        <!-- 이메일 입력 서식 -->
+        <div>
+          <label for="userEmail">이메일</label>
+          <input type="email" id="userEmail" required name="userEmail" />
+        </div>
+
+        <!-- 연락처 입력 서식-->
+        <div>
+          <label for="userPhone">연락처</label>
+          <input type="tel" id="userPhone" required name="userPhone" />
+          <!-- <input type="tel" 타입은 모바일 환경에서 보면 숫자패드가 바로 뜸-->
+        </div>
+
+        <!-- checkbox 입력 서식 -->
+        <div>
+          <input
+            type="checkbox"
+            checked
+            name="classLikelion"
+            id="classHTML"
+            value="html"
+          />
+          <label for="classHTML">HTML</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="classLikelion"
+            id="classCSS"
+            value="css"
+          />
+          <label for="classCSS">CSS</label>
+        </div>
+        <div>
+          <input type="checkbox" name="classLikelion" id="classJS" value="js" />
+          <label for="classJS">JS</label>
+        </div>
+
+        <!-- radio 입력 서식 -->
+        <div>
+          <input type="radio" name="classRoom" id="classRoom11" />
+          <label for="classRoom11">회고11팀</label>
+        </div>
+        <div>
+          <input type="radio" name="classRoom" id="classRoom1" />
+          <label for="classRoom1">회고1팀</label>
+        </div>
+        <!-- 전송 버튼-->
+        <input type="submit" value="전송" />
+      </fieldset>
+    </form>
+  </body>
+</html>
+<!-- <input aria-required> : 스크린 리더가 해당 항목이 필수임을 읽어줌 -->
+<!-- <input placeholder="메세지"": 입력란의 힌트 -->
+<!-- <input name="" 데이터를 서버에 보냈을 때 **데이터를 서버에 저장** 하는 속성 ex)DB에 데이터 저장 -->
+<!-- <input maxlength="값" : 최대 몇글자까지 입력할 수 있는지 지정(<-> minlength="값" : 최소 몇 글자 이상 입력해야 하는지 지정) -->
+<!-- <input checked : 체크 박스, 라디오 박스등에서 해당 항목을 자동으로 체크되어 있게 하는 속성 -->
+<!-- <input value :서버에 어떤 '값'을 보낼 지 미리 설정하는 속성 -->
+<!-- 암묵적인 레이블링 명시적 레이블링 차이점 알아보기 -->
