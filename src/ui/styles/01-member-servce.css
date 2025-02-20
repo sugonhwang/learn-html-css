@@ -1,0 +1,32 @@
+/* 클래스 선택자 */
+/* 배경 색상 */
+/* font-variant는 소문자를 대문자로 변환이 가능했으나 폰트 크기가 작은 대문자로 변경되어 다른 속성을 적용해보기 위해 주석 */
+/* text-transform 속성을 통해 폰트 사이즈 변경 없이 대문자로 변경 되는것이 가능하므로 자식 요소 모두에 상속함 */
+.member-service {
+  background-color: yellow;
+  text-align: right;
+  /* font-variant: small-caps; */
+  text-transform: uppercase;
+  font-size: 1.125rem;
+
+  /* font 단축 속성을 사용하여 글자크기와 글꼴을 지정 */
+  font: 1.125rem, suit, sans-serif;
+}
+
+/* 태그 선택자 */
+/* 웹브라우저 스타일(밑줄)을 재정의 */
+/* 웹브라우저의 링크스타일(색상)을 재정의(상속) */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* a 요소이면서 가상 요소 선택자 */
+a::before {
+  content: '|';
+}
+
+/* a 요소보다 우선순위 */
+a:first-child:before {
+  content: '';
+}
