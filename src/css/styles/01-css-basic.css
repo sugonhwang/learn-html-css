@@ -1,0 +1,7 @@
+/* body 요소의 배경 색상 지정 */
+body {
+  background-color: yellow;
+  color: rgba(0, 0, 255, 0.5);
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* 전체 글꼴 설정 : font-family: 1번 글꼴, 2번 글꼴, 3번 글꼴, serif */

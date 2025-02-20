@@ -1,0 +1,67 @@
+body {
+  background-color: #ffc;
+}
+/* 태그 선택자 */
+p {
+  color: red;
+
+  &:hover {
+    /*중첩 태그 */
+    background-color: skyblue;
+  }
+}
+
+/* 클래스 선택자 */
+.like {
+  color: green;
+}
+
+/* id 선택자 */
+#lion {
+  color: blue;
+}
+
+/* 속성 선택자 */
+[title] {
+  color: purple;
+}
+
+a[href="https://github.com/features/copilot"] /* a[href^="https"]: href 속성에 https 값을 쓰는 모든 태그 */
+{
+  text-decoration: none; /* 링크에 밑줄 없애는 스타일 */
+}
+
+/* 가상 클래스 선택자 */
+/* a:visited: 한번이라도 방문한 링크 스타일링 */
+/* a:hover: 링크에 마우스 커서를 대면 스타일링 된 색상으로 변경됨 */
+/* a:focus: 웹 접근성 측면에서 키보드로 포커싱 스타일 */
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: olive;
+}
+
+a:hover {
+  color: blue;
+}
+
+a:focus {
+  color: aqua;
+}
+
+a:active {
+  color: chartreuse;
+}
+
+/* 가상 요소 선택지 */
+/* before/after 가상 요소는 반드시 content가 있어야 함 */
+/* before : 퍼스트 차일드 / after : 라스트 차일드 */
+/* 가상 요소는 js에서 제어 불가능 */
+h1::before {
+  content: '멋사';
+}
+h1::after {
+  content: '13기';
+}

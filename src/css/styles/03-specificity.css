@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+}
+body {
+  color: olive;
+  margin: 0;
+}
+
+/* 겹침 
+기본적으로 스타일이 적용된 부분을 직접 수정하게 되면 직접 수정한 부분으로 겹치는 개념
+그럼 겹침과 우선순위는 관련 있는걸까?
+*/
+
+h1 {
+  font-size: 1em;
+}
+
+/* 우선 순위 
+명시를 얼마나 구체적으로 하느냐에 따라 우선 순위가 다름 
+명시도가 같은 경우 마지막에 선언한 스타일을 따라감 
+*/
+
+.ai {
+  background-color: orange !important; /* !important는 우선 순위 무시함 */
+}
+
+body h2 + p {
+  background-color: yellow;
+}
+
+body p[class] {
+  background-color: lime;
+}
+
+#ai {
+  background-color: pink;
+}
+
+.ai.copilot {
+  border: 10px dotted blue;
+}
+
+/* 상속 
+부모 요소의 스타일을 자식요소에 상속하는 개념(상속 예제 만들어서 확인해보기)
+*/
