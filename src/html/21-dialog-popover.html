@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dialog, popover 요소</title>
+    <style>
+      dialog.pannel-dialog::backdrop {
+        background: linear-gradient(
+          to right,
+          #ff7e5f,
+          #feb47b
+        ); /* 봄 느낌의 그라디언트 */
+      }
+    </style>
+    <script type="module">
+      // DOM 선택 부분
+      document.addEventListener('DOMContentLoaded', () => {
+        const showDialogButton = document.querySelector('.show-dialog');
+        const closeDialogButton = document.querySelector('.close-dialog');
+        const dialog = document.querySelector('.pannel-dialog');
+
+        // 함수 구현 부분
+        const showDialog = () => dialog.showModal();
+        const closeDialog = () => dialog.close();
+
+        // 이벤트 바인딩 부분
+        showDialogButton.addEventListener('click', showDialog);
+        closeDialogButton.addEventListener('click', closeDialog);
+      });
+    </script>
+  </head>
+  <body>
+    <h1>dialog 요소</h1>
+    <div class="dialog-area">
+      <button class="show-dialog">모달창 보기</button>
+
+      <dialog class="pannel-dialog" aria-labelledby="evnet">
+        <h2 id="event">깜짝 이벤트</h2>
+        <p>모달창 내용</p>
+        <button type="button" class="close-dialog">닫기</button>
+      </dialog>
+    </div>
+    <h1>popover 속성</h1>
+    <button type="button" class="button-popover" popovertarget="popoverContent">
+      팝오버 보기
+    </button>
+    <div id="popoverContent" popover>
+      <p>팝오버 내용</p>
+    </div>
+  </body>
+</html>
+<!-- 팝업창 : Modal window라고 부름 -->
+<!-- button type=""를 생략하면면 기본 타입인 submit-->
