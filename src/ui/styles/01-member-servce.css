@@ -2,15 +2,22 @@
 /* 배경 색상 */
 /* font-variant는 소문자를 대문자로 변환이 가능했으나 폰트 크기가 작은 대문자로 변경되어 다른 속성을 적용해보기 위해 주석 */
 /* text-transform 속성을 통해 폰트 사이즈 변경 없이 대문자로 변경 되는것이 가능하므로 자식 요소 모두에 상속함 */
+/* font-size: 0을 지정해서 공백문자가 크기를 갖지 않도록 상속  */
 .member-service {
   background-color: yellow;
-  text-align: right;
+  /* text-align: right; */
   /* font-variant: small-caps; */
   text-transform: uppercase;
-  font-size: 1.125rem;
+  line-height: 1.5;
+  font-size: 0;
 
   /* font 단축 속성을 사용하여 글자크기와 글꼴을 지정 */
   font: 1.125rem, suit, sans-serif;
+  a::before {
+    content: '|';
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 /* 태그 선택자 */
@@ -21,12 +28,37 @@ a {
   color: inherit;
 }
 
-/* a 요소이면서 가상 요소 선택자 */
-a::before {
-  content: '|';
+.item {
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.875rem;
+  background-color: pink;
 }
+/* a 요소이면서 가상 요소 선택자 */
 
 /* a 요소보다 우선순위 */
 a:first-child:before {
   content: '';
+}
+
+/* ul 요소를 활용한 구조 예제 */
+
+.member-link {
+  background-color: aqua;
+  margin: 0;
+  padding-left: 0;
+  li {
+    display: inline-block;
+    * {
+      font-size: 0.875em;
+      display: inherit;
+    }
+  }
+  a {
+    color: inherit;
+    padding-left: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-transform: uppercase;
+  }
 }
