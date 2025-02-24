@@ -1,0 +1,101 @@
+/* 전역 변수 정의 */
+
+/*  */
+@property --text-color {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: orange;
+}
+:root {
+  /* 색상 팔레트 */
+  --white: #fff;
+  --black: #000;
+  --red: #f00;
+  --green: #0f0;
+  --blue: #00f;
+  --orange: orange;
+  --yellow: yellow;
+  --light-blue: aqua;
+
+  /* 주요 색상 */
+  --primary-color: var(--orange);
+  --secondary-color: var(--light-blue);
+  --accent-color: var(--yellow);
+  --border-color: var(--red);
+
+  /* size */
+  --small: 0.75rem;
+  --medium: 0.875rem;
+  --default: 1rem;
+  --large: 1.125rem;
+}
+
+/* css 함수: var(--사용자 정의 변수명); / 사용자 정의 변수에 선언된 값을 불러옴 */
+h1 {
+  background-color: var(--secondary-color);
+
+  /* 사용자 변수에 값이 없을 경우 대안으로 변수에 적용할 값을 선언 */
+  background-color: var(--secondary-color, #2ecc71);
+}
+
+/* 지역 변수 정의 */
+/* 컨테이너(class)안에 사용자 정의 변수를 선언하게 되면 컨테이너 안에서만 사용 가능함  */
+/* 전역변수보다 지역변수가 우선순위를 가짐 */
+
+.text-card-1 {
+  /* --secondary-color: #f386d6; */
+  /* 전역변수명을 지역변수로 사용할 수 있음 */
+  --bg-color: var(--green);
+  --border-color: var(--red);
+
+  h1 {
+    background-color: var(--bg-color);
+  }
+
+  p {
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--border-color);
+  }
+}
+
+.text-card-2 {
+  --bg-color: var(--blue);
+  --border-color: var(--green);
+
+  h1 {
+    background-color: var(--bg-color);
+  }
+
+  p {
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--border-color);
+  }
+}
+
+/* @property 상속 */
+.container {
+  color: var(--text-color);
+  .parent {
+    --text-color: red;
+  }
+  .child {
+    color: var(--text-color);
+  }
+}
+
+.wrapper {
+  button.small {
+    font-size: var(--small);
+  }
+  button.medium {
+    font-size: var(--medium);
+  }
+  button.large {
+    font-size: var(--large);
+  }
+  button.default {
+    font-size: var(--default);
+  }
+}
