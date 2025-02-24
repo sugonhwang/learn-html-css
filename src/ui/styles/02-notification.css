@@ -1,0 +1,47 @@
+@import '/src/common/mini-reset.css';
+
+:root {
+  --subject-color: #22be61;
+  --content-color: #929b90;
+  --sub-cont-time-weight: bold;
+  --space-20: 1.25rem;
+  --space-60: 3.75rem;
+}
+
+body {
+  margin: 50px;
+}
+
+h1 {
+  margin-bottom: 50px;
+}
+
+/* 알림 */
+.notification {
+  /* background-color: yellow; */
+  position: relative;
+  border: 1px solid gray;
+  border-radius: 10px;
+  color: var(--subject-color);
+  background: url(/src/assets/svg/pot.svg) no-repeat 20px 20px;
+  padding: var(--space-20) var(--space-20) var(--space-20) var(--space-60);
+  /* background-position: 0 50%; */
+
+  .notification-subject {
+    font-size: 24px;
+    font-weight: var(--sub-cont-time-weight);
+  }
+
+  .notification-time {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 18px;
+    font-weight: var(--sub-cont-time-weight);
+  }
+
+  .content {
+    color: var(--content-color);
+    margin-top: 10px;
+  }
+}
