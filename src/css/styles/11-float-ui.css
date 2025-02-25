@@ -1,0 +1,35 @@
+@import '/src/common/modern-reset.css';
+
+body {
+  font-family: SUIT, sans-serif;
+}
+
+.card {
+  background: pink;
+  /* 테두리 만들기 */
+  border: 1px solid red;
+  border-radius: 0.5rem;
+
+  /* 배경 바깥 여백 설정 */
+  margin: 2em; /* 16px * 2 = 32px */
+  padding: 2em; /* 16px * 2 = 32px */
+
+  /* 제목 */
+  .subject {
+    background: skyblue;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    span {
+      vertical-align: top;
+      &[lang='en'] {
+        font-size: 0.5em;
+      }
+    }
+  }
+
+  /* 이미지 크기 조절 */
+  img {
+    width: 100px;
+  }
+}
