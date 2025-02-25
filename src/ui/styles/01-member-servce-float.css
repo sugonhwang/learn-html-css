@@ -1,0 +1,56 @@
+/* 스타일 초기화 */
+body *,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+:root {
+  --basic-color: black;
+}
+
+body {
+  font-family: SUIT, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+/* 멤버 서비스 */
+.member-service {
+  background: yellow;
+  display: flow-root;
+
+  a {
+    background: lime;
+    float: left;
+    text-transform: uppercase;
+    /* margin: 0 0.5em; */
+  }
+
+  a:nth-child(n + 2)::before {
+    content: '|';
+    margin: 0 0.5em;
+  }
+}
+
+/* 멤버 링크 */
+
+ul,
+li {
+  float: left;
+  list-style-type: none;
+  display: flow-root;
+  text-transform: uppercase;
+
+  span {
+    /* background: pink; */
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
