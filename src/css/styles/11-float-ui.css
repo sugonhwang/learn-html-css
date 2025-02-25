@@ -5,31 +5,60 @@ body {
 }
 
 .card {
-  background: pink;
-  /* 테두리 만들기 */
-  border: 1px solid red;
+  /* 썸네일이 카드 요소 밖으로 넘어갔을 때 BFC 레이아웃을 통해 해결 */
+  /* display: flow-root; */
+  /* background-color: pink; */
+  border: 1px solid #ccc;
+  margin: 2em; /* 16 * 2 = 32px */
   border-radius: 0.5rem;
+  padding: 2em;
 
-  /* 배경 바깥 여백 설정 */
-  margin: 2em; /* 16px * 2 = 32px */
-  padding: 2em; /* 16px * 2 = 32px */
+  &.good-partner {
+    display: flow-root;
+  }
+
+  /* 이미지 */
+  .thumbnail {
+    --radius: 50%;
+
+    border: 1px solid #ccc;
+    float: left;
+    margin: 1em;
+    padding: 0.625em;
+    width: 120px;
+    border-radius: var(--radius);
+    shape-outside: circle(50%);
+
+    img {
+      border-radius: var(--radius);
+
+      object-fit: cover;
+      object-position: 0 -20px;
+
+      /* 정사각형의 가로/세로를 1:1비율로 만들기 */
+      aspect-ratio: 1/1;
+    }
+  }
 
   /* 제목 */
   .subject {
-    background: skyblue;
     font-size: 1.5rem;
     font-weight: 600;
-
     span {
       vertical-align: top;
+
       &[lang='en'] {
         font-size: 0.5em;
       }
     }
   }
 
-  /* 이미지 크기 조절 */
-  img {
-    width: 100px;
+  /* 내용 */
+  .content {
+    margin-top: 0.625rem;
   }
+
+  /* &:hover {
+    border-radius: 50px 0 50px 0;
+  } */
 }
