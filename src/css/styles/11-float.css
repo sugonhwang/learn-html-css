@@ -12,15 +12,26 @@
 
   .thumbnail {
     background: var(--pastel-yellow);
-    /* float 요소의 부모에 직접 높이를 지정해서 일반 흐름을 벗어난 이미지가 다른 컨텐츠 레이아웃에 영향을 주는것을 방지 */
-    height: 141px;
+
+    /* clear 속성의 문제점(높이 인식 불가)을 해결하기 위해 BFC를 생성 */
+    /* overflow: hidden; */
+    display: flow-root;
+
+    /* float 요소의 부모에 직접 높이를 지정해서 일반 흐름을 벗어난 이미지가 다른 컨텐츠 레이아웃에 영향을 주는것을 방지(임시) */
+    /* height: 141px; */
 
     img {
       float: left;
+      /* position: relative; */
+
+      /* 이미지의 너비를 늘리면 높이도 같이 늘어남 왜? height는 auto이므로!  */
       width: 100px;
-      vertical-align: middle;
+      /* top: -50px;
+      right: -50px; */
+
       /* vertical-align: top; 이미지 아래쪽 여백을 없애기 위한 트릭 */
       /* display: block; 이미지 아래쪽 여백을 없애기 위한 트릭 */
+      vertical-align: middle;
     }
   }
 
@@ -29,6 +40,9 @@
   }
 
   .content {
+    /* clear: float 효과를 해제함 */
+    /* cloear 속성은 반드시 block 성향을 가지는 요소에만 지정 가능 */
+    clear: both;
     background: var(--pastel-orange);
   }
 }
