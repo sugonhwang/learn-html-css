@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/src/assets/favicon/likelion.ico" type="image/x-icon" />
+    <link rel="icon" href="/src/assets/favicon/likelion.svg" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <link rel="stylesheet" href="/src/ui/styles/06-responsive-layout.css" />
+    <title>반응형 레이아웃</title>
+  </head>
+  <body>
+    <h1>css 반응형 레이아웃(responsive layout)</h1>
+    <div class="container">
+      <header class="header">Header</header>
+      <!-- 데스크탑 환경 마크업: navigation+content-wrapper 묶음 -->
+      <div class="nav-main-aside-wrapper">
+        <nav class="navigation">navigation</nav>
+
+        <!-- 테블릿 환경 마크업: 메인 컨텐츠, 사이드바를 묶음-->
+        <div class="content-wrapper">
+          <main class="content">Main Content</main>
+          <aside class="sidebar">Sidebar</aside>
+        </div>
+      </div>
+      <footer class="footer">Footer</footer>
+    </div>
+  </body>
+</html>

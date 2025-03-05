@@ -1,0 +1,82 @@
+@import '/src/common/best-reset.css';
+@import '/src/common/theme.css';
+@import '/src/ui/components/avatar/avatar.css';
+
+/* Stacking context */
+
+body {
+  margin: 50px;
+}
+
+h1 {
+  /* margin-block: 위 아래 h1 여백 */
+  margin-block: 20px;
+}
+
+/* case-01 */
+.case-01 {
+  background: yellow;
+  display: flex;
+  flex-flow: row nowrap;
+
+  .button-avatar {
+    position: static;
+    margin-right: -20px;
+    transition: rotate 2000ms;
+    /* filter: blur(5px); */
+
+    &:hover,
+    &:focus {
+      /* 아바타의 겹치는 순서를 제어하기 위해 0보다 큰 값 지정 */
+      /* position이 static, auto가 아닌 경우에만 가능 */
+      z-index: 10;
+
+      /* 아바타 이미지에 커서를 대면 이미지가 1.5만큼 확대됨 */
+      transform: scale(1.5);
+
+      /* 아바타 이미지에 투명도 설정 */
+      /* opacity: 0.8; */
+
+      /* 사진어플의 필터 효과처럼 여러 필터 효과를 지정할 수 있음 */
+      filter: grayscale(50%);
+
+      rotate: 3turn;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+/* transition */
+/* case-02 */
+.case-02 {
+  margin-block-start: 20px;
+  display: flex;
+  gap: 20px;
+
+  [class^='area'] {
+    inline-size: 100px;
+    block-size: 100px;
+    border: 1px solid currentColor;
+    text-align: center;
+    align-content: center;
+    background: var(--pastel-lavender);
+    /* transition-property: background, border-radius;
+    transition-duration: 2s 1s;
+    transition-delay: 0s, 2s;
+    transition-timing-function: ease; */
+    transition:
+      background 2s 0s ease,
+      border-radius 1s 2s ease;
+
+    &:hover {
+      background: var(--pastel-orange);
+      border-radius: 50%;
+    }
+  }
+}
+/* display: inline-block 일때 눈에 보이지 않는 여백이 생기기 때문에 이를 해결하기 위해 부모 요소에 dispaly: flex; 설정 */
+/* flex 설정을 하면 버튼 display는 block이지만 부모 요소의 flex의 기본 방향이 row이므로 가로로 배치 됨 */
+/* 키보드 접근: focus */
