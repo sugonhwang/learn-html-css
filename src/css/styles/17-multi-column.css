@@ -2,3 +2,68 @@
 @import '/src/common/theme.css';
 @import '/src/common/a11y.css';
 @import '/src/common/base.css';
+/* .container {
+  background: var(--pastel-lavender);
+  padding: 1em;
+
+  .case {
+    margin-block: 20px;
+  }
+} */
+
+/* case-01 colum-width: 뷰 포트에 따라 단이 증감함 */
+/* column-rule: 단 사이에 선을 그어주는 속성 */
+/* .case-01 {
+  column-width: 15rem;
+  column-rule: 1px solid red;
+  column-gap: 2rem;
+} */
+
+/* case-02 column-count: 뷰포트에 상관없이 카운트 값만큼 유지 */
+/* column-span: all을 지정하기 위해서는 블록요소여야만 함 */
+
+/* .case-02 {
+  column-count: 4;
+  column-rule: 1px dotted green;
+  span {
+    display: block;
+    background: var(--pastel-blue);
+    color: var(--white);
+    padding: 0.5em;
+    column-span: all;
+  }
+} */
+
+/* case-03 colums 단축 속성에 column-width 적용 */
+/* colums에 width와 count 둘다 주면 하나의 값만 적용됨 */
+
+/* .case-03 {
+  columns: 3;
+  column-rule: 5px double blue;
+} */
+
+/* case-04 colums 단축 속성에 column-count 적용 */
+
+/* .case-04 {
+  column-count: 4;
+} */
+
+/* case-05 column-fill: balance; 적용 */
+
+/* .case-05 {
+  columns: 2;
+  column-fill: balance;
+  height: 100px;
+  block-size: 100px;
+} */
+
+/* 다단 레이아웃을 적용한 컨테이너 */
+.wrapper {
+  background: var(--pastel-green);
+  padding: 1em;
+  columns: 4;
+
+  case {
+    break-after: before;
+  }
+}

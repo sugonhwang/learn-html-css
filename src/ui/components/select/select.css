@@ -1,0 +1,48 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/theme.css';
+@import '/src/common/a11y.css';
+@import '/src/common/base.css';
+
+.select-box {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  border: 2px solid gray;
+  border-radius: 8px;
+  width: 250px;
+  position: relative; /* 화살표 위치 지정 위해 필요 */
+  transition: border-color 0.3s;
+  background: white;
+}
+
+.select-box:fucos-within {
+  border: var(--pastel-gray);
+}
+
+.selec-box select {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  padding: 5px;
+  outline: none;
+  cursor: pointer;
+  appearance: none; /* 기본 드롭다운 UI 제거 */
+}
+
+.global-icon {
+  width: 15px;
+  height: 16px;
+}
+
+.triangle-icon {
+  width: 11px;
+  height: 8px;
+  position: absolute;
+  right: 8px;
+  pointer-events: none; /* 클릭 방해 방지 */
+}
+
+.icon {
+  place-self: center;
+}
